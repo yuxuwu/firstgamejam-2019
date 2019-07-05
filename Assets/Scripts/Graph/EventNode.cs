@@ -4,7 +4,27 @@ using UnityEngine;
 using XNode;
 
 [NodeTint("#dad668")]
-public class EventNode : BaseConnectingNode {
+public class EventNode : Node
+{
+	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
+	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next;
+
 	public int id;
 	public string EventType;
+
+	public Node GetPrevNode()
+	{
+		NodePort port = null;
+		port = GetOutputPort("Prev");
+		return port.Connection.node;
+	}
+
+	public Node GetNextNode()
+	{
+		NodePort port = null;
+		port = GetOutputPort("Next");
+		return port.Connection.node;
+	}
+
+	public override object GetValue(NodePort port) { return null; }
 }

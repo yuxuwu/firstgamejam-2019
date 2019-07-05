@@ -16,17 +16,8 @@ MonoBehaviour:
   position: {x: -408, y: -152}
   ports:
     keys:
-    - Prev
     - Next
     values:
-    - _fieldName: Prev
-      _node: {fileID: -9060073355673718067}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
     - _fieldName: Next
       _node: {fileID: -9060073355673718067}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -38,7 +29,6 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Prev: {fileID: 0}
   Next: {fileID: 0}
 --- !u!114 &-6042993393881358034
 MonoBehaviour:
@@ -378,8 +368,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-  id: 3
   Prev: {fileID: 0}
+  id: 3
+  SpeakerName: Asdf
   Choices:
   - This is the first choice
   - Second choice here
