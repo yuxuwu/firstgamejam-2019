@@ -11,7 +11,7 @@ public class ScenarioManager : MonoBehaviour
 
     void Start()
     {
-        _SetCurrentNodeToStart();
+        _currentNode = _scenario.GetStartNode();
     }
 
     void Update()
@@ -21,24 +21,11 @@ public class ScenarioManager : MonoBehaviour
             _OkayToProceedText = false;
             _ProcessCurrentNode();
         }
+
         if (Input.GetButtonUp("Submit"))
         {
             _OkayToProceedText = true;
         }
-    }
-
-    void _SetCurrentNodeToStart()
-    {
-        foreach (Node node in _scenario.nodes)
-        {
-            if (node is StartNode)
-            {
-                _currentNode = (StartNode) node;
-                Debug.Log("Start node set");
-                return;
-            }
-        }
-        Debug.Log("No Start Node found!!!");
     }
 
     void _ProcessCurrentNode()

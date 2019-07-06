@@ -4,12 +4,11 @@ using UnityEngine;
 using XNode;
 
 [NodeTint("#dad668")]
-public class EventNode : Node
+public class EventNode : IDNodeBase
 {
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next;
 
-	public int id;
 	public string EventType;
 
 	public Node GetPrevNode()

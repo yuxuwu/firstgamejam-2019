@@ -2,10 +2,9 @@
 using XNode;
 
 [NodeTint("#5cae8a")]
-public class ChoiceSpeechNode : Node 
+public class ChoiceSpeechNode : IDNodeBase
 {
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
-	public int id;
 	public string SpeakerName;
 	[Output(backingValue = ShowBackingValue.Never, dynamicPortList = true)] [SerializeField] [TextArea]
 		string[] Choices;

@@ -2,13 +2,12 @@
 using XNode;
 
 [NodeTint("#5e897c")]
-public class SpeechNode : Node
+public class SpeechNode : IDNodeBase
 {
 
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next;
 
-	public int id;
 	public string SpeakerName;
 	[TextArea] public string Text;
 

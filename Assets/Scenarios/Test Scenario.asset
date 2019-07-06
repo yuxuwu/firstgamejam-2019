@@ -71,9 +71,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  id: 0
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  id: 0
   SpeakerName: Asdf
   Text: This is the first line
 --- !u!114 &-2360395130189713838
@@ -117,9 +117,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  id: 2
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  id: 2
   EventType: Tea Brewing
 --- !u!114 &-951158901900929507
 MonoBehaviour:
@@ -159,9 +159,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  id: 5
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  id: 5
   SpeakerName: Asdf
   Text: Result of choice 2
 --- !u!114 &11400000
@@ -224,9 +224,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  id: 4
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  id: 4
   SpeakerName: Asdf
   Text: Result of choice 1
 --- !u!114 &1491155356538589857
@@ -285,9 +285,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  id: 6
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  id: 6
   SpeakerName: Asdf
   Text: Result of choice 3
 --- !u!114 &2494008907732956426
@@ -368,8 +368,8 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-  Prev: {fileID: 0}
   id: 3
+  Prev: {fileID: 0}
   SpeakerName: Asdf
   Choices:
   - This is the first choice
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 8, y: -184}
+  position: {x: 56, y: -184}
   ports:
     keys:
     - Prev
@@ -416,8 +416,8 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  id: 1
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  id: 1
   SpeakerName: Asdf
   Text: Nodes can be duplicated to save time!

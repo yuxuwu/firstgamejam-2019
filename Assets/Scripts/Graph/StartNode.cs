@@ -13,5 +13,11 @@ public class StartNode : Node
 		return port.Connection.node;
 	}
 
+	// TODO: Implement this if needed
+	bool ValidateIDs()
+	{
+		return true;
+	}
+
 	public override object GetValue(NodePort port) { return null; }
 }
