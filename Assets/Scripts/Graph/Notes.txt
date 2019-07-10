@@ -2,5 +2,6 @@ Color Scheme:
 #5e897c
 #5cae8a
 #dad668
+#b3b056
 #f4b46b
 #f14f41
