@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1183735917227089115
+--- !u!1 &7070372813973497802
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1183735917227089113}
-  - component: {fileID: 1183735917227089114}
+  - component: {fileID: 7070372813973497812}
+  - component: {fileID: 7070372813973497803}
+  - component: {fileID: 7070372813973497813}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1183735917227089113
+--- !u!4 &7070372813973497812
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183735917227089115}
+  m_GameObject: {fileID: 7070372813973497802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.59, y: 0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1183735917227089114
+--- !u!114 &7070372813973497803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070372813973497802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadccd120534ad04d881b72a5e7ac4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 312cb5968b95e264f901d2cc1d58bad1, type: 3}
+  spoonSprite: {fileID: 21300000, guid: cb3b2796f6dfe1f4880254fa0092d209, type: 3}
+  spoonFruitSprite: {fileID: 21300000, guid: 87a34d270e8287d49b980b0769523144, type: 3}
+  spoonPuerSprite: {fileID: 21300000, guid: f87b3e50075b89947b2f123db0c3d661, type: 3}
+  spoonTiguaninSprite: {fileID: 21300000, guid: e459336b6cf07fd42a691b0230cd8436,
+    type: 3}
+  spoonUlunSprite: {fileID: 21300000, guid: e8a81b47086da7e4faee2a811ec92836, type: 3}
+  stats: {fileID: 0}
+--- !u!212 &7070372813973497813
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183735917227089115}
+  m_GameObject: {fileID: 7070372813973497802}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -66,15 +87,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -958105721
-  m_SortingLayer: 1
+  m_SortingLayerID: 161676657
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54fca11671d92114196d4138f10c9c25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 312cb5968b95e264f901d2cc1d58bad1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.6, y: 5.64}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
