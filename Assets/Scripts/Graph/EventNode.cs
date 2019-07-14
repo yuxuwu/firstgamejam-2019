@@ -9,19 +9,5 @@ public class EventNode : IDNodeBase
 
 	public string EventType;
 
-	public Node GetPrevNode()
-	{
-		NodePort port = null;
-		port = GetOutputPort("Prev");
-		return port.Connection.node;
-	}
-
-	public Node GetNextNode()
-	{
-		NodePort port = null;
-		port = GetOutputPort("Next");
-		return port.Connection.node;
-	}
-
 	public override object GetValue(NodePort port) { return null; }
 }

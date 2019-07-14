@@ -13,39 +13,32 @@ public class ChoiceEmotionNode : IDNodeBase {
 
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node FailRoute;
 
-	public Node GetPrevNode()
-	{
-		NodePort port = null;
-		port = GetOutputPort("Prev");
-		return port.Connection.node;
-	}
-
-	public Node GetNextNodeJealousy()
+	public IDNodeBase GetNextNodeJealousy()
 	{
 		NodePort port = null;
 		port = GetOutputPort("JealousyRoute");
-		return port.Connection.node;
+		return port.Connection.node as IDNodeBase;
 	}
 
-	public Node GetNextNodePride()
+	public IDNodeBase GetNextNodePride()
 	{
 		NodePort port = null;
 		port = GetOutputPort("PrideRoute");
-		return port.Connection.node;
+		return port.Connection.node as IDNodeBase;
 	}
 
-	public Node GetNextNodeAmbition()
+	public IDNodeBase GetNextNodeAmbition()
 	{
 		NodePort port = null;
 		port = GetOutputPort("AmbitionRoute");
-		return port.Connection.node;
+		return port.Connection.node as IDNodeBase;
 	}
 
-	public Node GetNextFail()
+	public IDNodeBase GetNextFail()
 	{
 		NodePort port = null;
 		port = GetOutputPort("FailRoute");
-		return port.Connection.node;
+		return port.Connection.node as IDNodeBase;
 	}
 
 	public override object GetValue(NodePort port)

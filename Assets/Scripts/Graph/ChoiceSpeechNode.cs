@@ -8,19 +8,12 @@ public class ChoiceSpeechNode : IDNodeBase
 	public string SpeakerName;
 	[Output(backingValue = ShowBackingValue.Never, dynamicPortList = true)] [SerializeField] [TextArea]
 		string[] Choices;
-	
-	public Node GetPrevNode()
-	{
-		NodePort port = null;
-		port = GetOutputPort("Prev");
-		return port.Connection.node;
-	}
 
-	public Node GetNextNode(int index)
+	public IDNodeBase GetNextNode(int index)
 	{
 		NodePort port = null;
 		port = GetOutputPort("Choices " + index);
-		return port.Connection.node;
+		return port.Connection.node as IDNodeBase;
 	}
 
 	public override object GetValue(NodePort port)

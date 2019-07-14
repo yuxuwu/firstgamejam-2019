@@ -51,7 +51,7 @@ public class ScenarioGraph : NodeGraph {
         return node;
     }
 
-    public Node GetStartNode()
+    public IDNodeBase GetStartNode()
     {
         foreach (Node node in nodes)
         {

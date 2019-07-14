@@ -16,7 +16,7 @@ public class UIEmotionInterface : MonoBehaviour
         // Get Pos jea/amb
         Vector3 JeaAmbPos = JealousyPos.position + ((AmbitionPos.position - JealousyPos.position) * (((float)stats.Ambition/stats.Jealousy)/2));
         //Debug.Log(JeaAmbPos);
-        // Get Pos jea/pride 
+        // Get Pos jea/pride
         Vector3 JeaPriPos = JealousyPos.position + ((PridePos.position - JealousyPos.position) * (((float)stats.Pride/stats.Jealousy)/2));
         //Debug.Log(JeaPriPos);
         // Get pos amb/pride
