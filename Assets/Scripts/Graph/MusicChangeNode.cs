@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using XNode;
 
-[NodeTint("#dad668")]
-public class EventNode : IDNodeBase
-{
+[CreateNodeMenu("Action Nodes/Music Change Node")]
+[NodeTint("#f4b46b")]
+public class MusicChangeNode : IDNodeBase {
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next;
 
-	public string EventType;
-
-	public override object GetValue(NodePort port) { return null; }
+	public AudioClip Music;
 }

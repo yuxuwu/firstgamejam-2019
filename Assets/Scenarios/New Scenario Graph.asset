@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9060073355673718067
+--- !u!114 &-8471933177000809193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,29 +9,81 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c035da569e63469718967c11726e3, type: 3}
-  m_Name: Start
+  m_Script: {fileID: 0}
+  m_Name: Choice Speech
+  m_EditorClassIdentifier: Assembly-CSharp::ChoiceSpeechNode
+  graph: {fileID: 11400000}
+  position: {x: 488, y: 264}
+  ports:
+    keys:
+    - Prev
+    - Next0
+    - Next1
+    values:
+    - _fieldName: Prev
+      _node: {fileID: -8471933177000809193}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next0
+      _node: {fileID: -8471933177000809193}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next1
+      _node: {fileID: -8471933177000809193}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 9
+  Prev: {fileID: 0}
+  SpeakerName: 
+  Text: 
+  Next0: {fileID: 0}
+  Choice0Text: 
+  Next1: {fileID: 0}
+  Choice1Text: 
+--- !u!114 &-6526697467818028240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753ced5917825ad48bb4144bbd82f517, type: 3}
+  m_Name: Start Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -408, y: -152}
+  position: {x: 8, y: 488}
   ports:
     keys:
     - Next
     values:
     - _fieldName: Next
-      _node: {fileID: -9060073355673718067}
+      _node: {fileID: -6526697467818028240}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: -6042993393881358034}
+        node: {fileID: -2541584264358321227}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 0
+  id: 12
   Next: {fileID: 0}
---- !u!114 &-8039947122075605520
+--- !u!114 &-6193351289949543638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,44 +92,90 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
+  m_Script: {fileID: 11500000, guid: 753ced5917825ad48bb4144bbd82f517, type: 3}
+  m_Name: Start Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 920, y: -168}
+  position: {x: 8, y: 200}
+  ports:
+    keys:
+    - Next
+    values:
+    - _fieldName: Next
+      _node: {fileID: -6193351289949543638}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 109125696683394830}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 7
+  Next: {fileID: 0}
+--- !u!114 &-5332355280933680546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1696e58d9d6c34787187fa90001763, type: 3}
+  m_Name: Simple Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 488, y: 200}
   ports:
     keys:
     - Prev
-    - Next
+    - Next0
+    - Next1
     values:
     - _fieldName: Prev
-      _node: {fileID: -8039947122075605520}
+      _node: {fileID: -5332355280933680546}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 7921068776593105507}
+        node: {fileID: 109125696683394830}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: -8039947122075605520}
+    - _fieldName: Next0
+      _node: {fileID: -5332355280933680546}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 8773087732916209515}
+        node: {fileID: 5462156573403625317}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 23
+    - _fieldName: Next1
+      _node: {fileID: -5332355280933680546}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 5462156573403625317}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 9
   Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 444444444444444444444444444444444444
---- !u!114 &-6042993393881358034
+  SpeakerName: 
+  Text: Hey, I asked you, what the hell is wrong with you?
+  Next0: {fileID: 0}
+  Choice0Text: '[Apologize]'
+  Next1: {fileID: 0}
+  Choice1Text: '[Get Angry]'
+--- !u!114 &-2541584264358321227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,44 +184,78 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
+  m_Script: {fileID: 11500000, guid: 8e24d254949924b4b8bd953dcc26cc12, type: 3}
+  m_Name: Emotion Check
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -200, y: -184}
+  position: {x: 248, y: 504}
   ports:
     keys:
     - Prev
-    - Next
+    - JealousyRoute
+    - PrideRoute
+    - AmbitionRoute
+    - FailRoute
     values:
     - _fieldName: Prev
-      _node: {fileID: -6042993393881358034}
+      _node: {fileID: -2541584264358321227}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: -9060073355673718067}
+        node: {fileID: -6526697467818028240}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: -6042993393881358034}
+    - _fieldName: JealousyRoute
+      _node: {fileID: -2541584264358321227}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: PrideRoute
+      _node: {fileID: -2541584264358321227}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 4590755625467089574}
+        node: {fileID: 5581700128881032898}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 0
+    - _fieldName: AmbitionRoute
+      _node: {fileID: -2541584264358321227}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: FailRoute
+      _node: {fileID: -2541584264358321227}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 4584811479445375758}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 17
   Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: This is the first line
---- !u!114 &-3125154596753845053
+  Jealousy: -1
+  JealousyRoute: {fileID: 0}
+  Pride: 20
+  PrideRoute: {fileID: 0}
+  Ambition: -1
+  AmbitionRoute: {fileID: 0}
+  FailRoute: {fileID: 0}
+--- !u!114 &-1022101342140310527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,44 +264,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 0}
+  m_Name: Switch
+  m_EditorClassIdentifier: Assembly-CSharp::SwitchNode
   graph: {fileID: 11400000}
-  position: {x: 248, y: -184}
+  position: {x: 1368, y: 200}
   ports:
     keys:
     - Prev
-    - Next
+    - TrueNext
+    - FalseNext
     values:
     - _fieldName: Prev
-      _node: {fileID: -3125154596753845053}
+      _node: {fileID: -1022101342140310527}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 4590755625467089574}
+        node: {fileID: 6106161346046029787}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: -3125154596753845053}
+    - _fieldName: TrueNext
+      _node: {fileID: -1022101342140310527}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 3969073778365472177}
+        node: {fileID: 7568961023692091539}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 2
+    - _fieldName: FalseNext
+      _node: {fileID: -1022101342140310527}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 6106161346046029787}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 13
   Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 111111111111111111111111111
---- !u!114 &-1189362183720803307
+  Switch: 0
+  TrueNext: {fileID: 0}
+  FalseNext: {fileID: 0}
+--- !u!114 &-31693420763555281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,43 +322,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
+  m_Script: {fileID: 11500000, guid: b6e8f042f19b4b04db12421103e2532c, type: 3}
+  m_Name: End Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 952, y: 56}
+  position: {x: 1080, y: 680}
   ports:
     keys:
     - Prev
-    - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: -1189362183720803307}
+      _node: {fileID: -31693420763555281}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 8445892364385616312}
+        node: {fileID: 4584811479445375758}
+        reroutePoints: []
+      - fieldName: Next
+        node: {fileID: 3301683535683976802}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: -1189362183720803307}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Prev
-        node: {fileID: 7040812195563410809}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  id: 26
+  id: 16
   Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 9999999999999999999999999999999999999
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,26 +357,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74ab4cb87c99100499a718247ae1ee07, type: 3}
-  m_Name: Test Scenario
+  m_Name: New Scenario Graph
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -9060073355673718067}
-  - {fileID: -6042993393881358034}
-  - {fileID: 4590755625467089574}
-  - {fileID: 1491155356538589857}
-  - {fileID: -3125154596753845053}
-  - {fileID: 3969073778365472177}
-  - {fileID: 7921068776593105507}
-  - {fileID: -8039947122075605520}
-  - {fileID: 8773087732916209515}
-  - {fileID: 6551904759575436782}
-  - {fileID: -1189362183720803307}
-  - {fileID: 8445892364385616312}
-  - {fileID: 3597091257763130532}
-  - {fileID: 7040812195563410809}
-  - {fileID: 2563335463223457170}
-  - {fileID: 6045043585804309468}
---- !u!114 &1491155356538589857
+  - {fileID: 767107342083444253}
+  - {fileID: 556033544278435259}
+  - {fileID: 9150619856316494993}
+  - {fileID: 107811893172929757}
+  - {fileID: 2838075840063304693}
+  - {fileID: 4129294189339668076}
+  - {fileID: 6106161346046029787}
+  - {fileID: -6193351289949543638}
+  - {fileID: 109125696683394830}
+  - {fileID: -5332355280933680546}
+  - {fileID: 5462156573403625317}
+  - {fileID: 8800515351563355805}
+  - {fileID: -6526697467818028240}
+  - {fileID: -1022101342140310527}
+  - {fileID: 7568961023692091539}
+  - {fileID: 5581700128881032898}
+  - {fileID: -31693420763555281}
+  - {fileID: -2541584264358321227}
+  - {fileID: 4584811479445375758}
+  - {fileID: 2328140983040722619}
+  - {fileID: 3301683535683976802}
+--- !u!114 &107811893172929757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,12 +394,12 @@ MonoBehaviour:
   m_Name: Comment
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -408, y: -280}
+  position: {x: 504, y: -120}
   ports:
     keys: []
     values: []
-  Comment: This is a test scenario for debugging purposes
---- !u!114 &2563335463223457170
+  Comment: Main choices can be added in whenever
+--- !u!114 &109125696683394830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,83 +412,40 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1640, y: 56}
+  position: {x: 248, y: 200}
   ports:
     keys:
     - Prev
     - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: 2563335463223457170}
+      _node: {fileID: 109125696683394830}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 6045043585804309468}
+        node: {fileID: -6193351289949543638}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 2563335463223457170}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  id: 30
-  Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 1212121212121212121212121212
---- !u!114 &3597091257763130532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 472, y: 56}
-  ports:
-    keys:
-    - Prev
-    - Next
-    values:
-    - _fieldName: Prev
-      _node: {fileID: 3597091257763130532}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Next
-        node: {fileID: 6551904759575436782}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: 3597091257763130532}
+      _node: {fileID: 109125696683394830}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 8445892364385616312}
+        node: {fileID: -5332355280933680546}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 28
+  id: 8
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 777777777777777777777777777777777777
---- !u!114 &3969073778365472177
+  SpeakerName: 
+  Text: My story? What the hell are you talking about?
+--- !u!114 &556033544278435259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,44 +454,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
+  m_Script: {fileID: 11500000, guid: 2718698f1a0711a4b9524ebf93d5db9b, type: 3}
+  m_Name: Add Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 472, y: -184}
+  position: {x: 264, y: -8}
   ports:
     keys:
     - Prev
     - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: 3969073778365472177}
+      _node: {fileID: 556033544278435259}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: -3125154596753845053}
+        node: {fileID: 2328140983040722619}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 3969073778365472177}
+      _node: {fileID: 556033544278435259}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 7921068776593105507}
+        node: {fileID: 9150619856316494993}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 22
+  id: 2
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 222222222222222222222222222222
---- !u!114 &4590755625467089574
+  TargetID: 12
+  ChoiceText: Where are you from?
+--- !u!114 &767107342083444253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,44 +500,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
+  m_Script: {fileID: 11500000, guid: 574c035da569e63469718967c11726e3, type: 3}
+  m_Name: Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 24, y: -184}
+  position: {x: 3.0921319, y: -3.3325906}
   ports:
     keys:
-    - Prev
     - Next
     values:
-    - _fieldName: Prev
-      _node: {fileID: 4590755625467089574}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Next
-        node: {fileID: -6042993393881358034}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 4590755625467089574}
+      _node: {fileID: 767107342083444253}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: -3125154596753845053}
+        node: {fileID: 2328140983040722619}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   id: 1
-  Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: Nodes can be duplicated to save time!
---- !u!114 &6045043585804309468
+--- !u!114 &2328140983040722619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,44 +531,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
+  m_Script: {fileID: 11500000, guid: 5652bc347d3aab84f99715bc634f1f16, type: 3}
+  m_Name: Music Change
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1416, y: 56}
+  position: {x: 232, y: -152}
   ports:
     keys:
     - Prev
     - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: 6045043585804309468}
+      _node: {fileID: 2328140983040722619}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 7040812195563410809}
+        node: {fileID: 767107342083444253}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 6045043585804309468}
+      _node: {fileID: 2328140983040722619}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 2563335463223457170}
+        node: {fileID: 556033544278435259}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 31
+  id: 19
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 1111111111111111111111111111111111111
---- !u!114 &6551904759575436782
+  Music: {fileID: 8300000, guid: 85f26031cb1b5d94fb864f09f4b9f4c4, type: 3}
+--- !u!114 &2838075840063304693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -502,121 +580,29 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 232, y: 56}
+  position: {x: 790.11945, y: -4.1589437}
   ports:
     keys:
     - Prev
     - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: 6551904759575436782}
+      _node: {fileID: 2838075840063304693}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 8773087732916209515}
+        node: {fileID: 9150619856316494993}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 6551904759575436782}
+      _node: {fileID: 2838075840063304693}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 3597091257763130532}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  id: 25
-  Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 66666666666666666666666666
---- !u!114 &7040812195563410809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1192, y: 56}
-  ports:
-    keys:
-    - Prev
-    - Next
-    values:
-    - _fieldName: Prev
-      _node: {fileID: 7040812195563410809}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Next
-        node: {fileID: -1189362183720803307}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: 7040812195563410809}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Prev
-        node: {fileID: 6045043585804309468}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  id: 29
-  Prev: {fileID: 0}
-  Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 10101010101010101010
---- !u!114 &7921068776593105507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
-  m_Name: Speech
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 696, y: -168}
-  ports:
-    keys:
-    - Prev
-    - Next
-    values:
-    - _fieldName: Prev
-      _node: {fileID: 7921068776593105507}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Next
-        node: {fileID: 3969073778365472177}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: 7921068776593105507}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Prev
-        node: {fileID: -8039947122075605520}
+        node: {fileID: 4129294189339668076}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -625,9 +611,55 @@ MonoBehaviour:
   id: 4
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 333333333333333333333333333333333
---- !u!114 &8445892364385616312
+  SpeakerName: 
+  Text: Hello, this is the first line of dialogue
+--- !u!114 &3301683535683976802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2718698f1a0711a4b9524ebf93d5db9b, type: 3}
+  m_Name: Add Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 840, y: 536}
+  ports:
+    keys:
+    - Prev
+    - Next
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 3301683535683976802}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Next
+        node: {fileID: 5581700128881032898}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next
+      _node: {fileID: 3301683535683976802}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: -31693420763555281}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 20
+  Prev: {fileID: 0}
+  Next: {fileID: 0}
+  TargetID: 0
+  ChoiceText: So, tell me where you're from.
+--- !u!114 &4129294189339668076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -640,87 +672,40 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 696, y: 72}
+  position: {x: 1000, y: -8}
   ports:
     keys:
     - Prev
     - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: 8445892364385616312}
+      _node: {fileID: 4129294189339668076}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Next
-        node: {fileID: 3597091257763130532}
+        node: {fileID: 2838075840063304693}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 8445892364385616312}
+      _node: {fileID: 4129294189339668076}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: -1189362183720803307}
+        node: {fileID: 6106161346046029787}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 27
+  id: 5
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 8888888888888888888888888888888888888
---- !u!114 &8659232698746918807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5070a906809b5b4b86d440c5d76f655, type: 3}
-  m_Name: Movement
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 8, y: -360}
-  ports:
-    keys:
-    - Prev
-    - Next
-    values:
-    - _fieldName: Prev
-      _node: {fileID: 8659232698746918807}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Next
-        node: {fileID: -6042993393881358034}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Next
-      _node: {fileID: 8659232698746918807}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Prev
-        node: {fileID: 4590755625467089574}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  id: 7
-  Prev: {fileID: 0}
-  Next: {fileID: 0}
-  Chara: Character
-  Destination: {x: 0, y: 0, z: 0}
-  SampleRate: 1
---- !u!114 &8773087732916209515
+  SpeakerName: 
+  Text: The Next line will trigger the display of the main choices
+--- !u!114 &4584811479445375758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -733,36 +718,286 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -40, y: 56}
+  position: {x: 600, y: 712}
   ports:
     keys:
     - Prev
     - Next
     values:
     - _fieldName: Prev
-      _node: {fileID: 8773087732916209515}
+      _node: {fileID: 4584811479445375758}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: Next
-        node: {fileID: -8039947122075605520}
+      - fieldName: FailRoute
+        node: {fileID: -2541584264358321227}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Next
-      _node: {fileID: 8773087732916209515}
+      _node: {fileID: 4584811479445375758}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Prev
-        node: {fileID: 6551904759575436782}
+        node: {fileID: -31693420763555281}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 24
+  id: 18
   Prev: {fileID: 0}
   Next: {fileID: 0}
-  SpeakerName: Asdf
-  Text: 55555555555555555555555555555555555555
+  SpeakerName: 
+  Text: Leave me alone
+--- !u!114 &5462156573403625317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
+  m_Name: Speech
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 808, y: 264}
+  ports:
+    keys:
+    - Prev
+    - Next
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 5462156573403625317}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Next0
+        node: {fileID: -5332355280933680546}
+        reroutePoints: []
+      - fieldName: Next1
+        node: {fileID: -5332355280933680546}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next
+      _node: {fileID: 5462156573403625317}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 8800515351563355805}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 10
+  Prev: {fileID: 0}
+  Next: {fileID: 0}
+  SpeakerName: 
+  Text: This is the end of this dialogue.
+--- !u!114 &5581700128881032898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae4d61948011fe408d6f9e70eaa6417, type: 3}
+  m_Name: Speech
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 584, y: 536}
+  ports:
+    keys:
+    - Prev
+    - Next
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 5581700128881032898}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: PrideRoute
+        node: {fileID: -2541584264358321227}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next
+      _node: {fileID: 5581700128881032898}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 3301683535683976802}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 15
+  Prev: {fileID: 0}
+  Next: {fileID: 0}
+  SpeakerName: 
+  Text: You really wanna know, huh?
+--- !u!114 &6106161346046029787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95a8c8ba03feea47a0f5599bb9b5f68, type: 3}
+  m_Name: Display Choices
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1256, y: 24}
+  ports:
+    keys:
+    - Prev
+    - Next
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 6106161346046029787}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Next
+        node: {fileID: 4129294189339668076}
+        reroutePoints: []
+      - fieldName: FalseNext
+        node: {fileID: -1022101342140310527}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next
+      _node: {fileID: 6106161346046029787}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: -1022101342140310527}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 6
+  Prev: {fileID: 0}
+  Next: {fileID: 0}
+--- !u!114 &7568961023692091539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d008ca5b930df4fba568eef55ead14, type: 3}
+  m_Name: End
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1640, y: 104}
+  ports:
+    keys:
+    - Prev
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 7568961023692091539}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: TrueNext
+        node: {fileID: -1022101342140310527}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 14
+  Prev: {fileID: 0}
+--- !u!114 &8800515351563355805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e8f042f19b4b04db12421103e2532c, type: 3}
+  m_Name: End Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1060.687, y: 278.88605}
+  ports:
+    keys:
+    - Prev
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 8800515351563355805}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Next
+        node: {fileID: 5462156573403625317}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 11
+  Prev: {fileID: 0}
+--- !u!114 &9150619856316494993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2718698f1a0711a4b9524ebf93d5db9b, type: 3}
+  m_Name: Add Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 488, y: -8}
+  ports:
+    keys:
+    - Prev
+    - Next
+    values:
+    - _fieldName: Prev
+      _node: {fileID: 9150619856316494993}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Next
+        node: {fileID: 556033544278435259}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Next
+      _node: {fileID: 9150619856316494993}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Prev
+        node: {fileID: 2838075840063304693}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 3
+  Prev: {fileID: 0}
+  Next: {fileID: 0}
+  TargetID: 7
+  ChoiceText: What's your story?

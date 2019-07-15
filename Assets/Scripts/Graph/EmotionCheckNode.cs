@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using XNode;
 
-public class ChoiceEmotionNode : IDNodeBase {
+[CreateNodeMenu("Routing Nodes/Emotion Check Node")]
+[NodeTint("#52414c")]
+public class EmotionCheckNode : IDNodeBase {
 
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
-	public int Jealousy;
+
+	public int Jealousy = -1;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node JealousyRoute;
-	public int Pride;
+
+	public int Pride = -1;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node PrideRoute;
-	public int Ambition;
+
+	public int Ambition = -1;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node AmbitionRoute;
 
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node FailRoute;
@@ -34,7 +39,7 @@ public class ChoiceEmotionNode : IDNodeBase {
 		return port.Connection.node as IDNodeBase;
 	}
 
-	public IDNodeBase GetNextFail()
+	public override IDNodeBase GetNextNode()
 	{
 		NodePort port = null;
 		port = GetOutputPort("FailRoute");

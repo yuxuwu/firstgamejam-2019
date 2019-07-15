@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using XNode;
 
+[CreateNodeMenu("")]
 public class IDNodeBase : Node
 {
     [SerializeField] public int id;

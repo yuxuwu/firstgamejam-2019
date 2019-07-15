@@ -76,8 +76,7 @@ public class InputManager : MonoBehaviour
 
     bool CheckNodeIsSpeechNode(IDNodeBase node)
     {
-        if (node is SpeechNode ||
-            node is ChoiceSpeechNode)
+        if (node is SpeechNode)
             return true;
         return false;
     }
@@ -88,14 +87,6 @@ public class InputManager : MonoBehaviour
         {
             __ProcessSpeechNode(node);
         }
-        else if(node is ChoiceSpeechNode)
-        {
-            __ProcessChoiceSpeechNode(node);
-        }
-        else if(node is EventNode)
-        {
-            __ProcessEventNode(node);
-        }
         else if(node is StartNode)
         {
             __ProcessStartNode(node);
@@ -105,14 +96,6 @@ public class InputManager : MonoBehaviour
             Debug.Log("Node not yet implemented!!");
         }
     }
-
-    void __ProcessChoiceSpeechNode(IDNodeBase _node)
-    {
-        ChoiceSpeechNode node = (ChoiceSpeechNode) _node;
-        m_textbox.SetSpeakerName(node.SpeakerName);
-        m_textbox.SetText("Choices not yet implemented! Defaulting to choice 1");
-    }
-
     void __ProcessSpeechNode(IDNodeBase _node)
     {
         SpeechNode node = (SpeechNode) _node;
@@ -125,12 +108,6 @@ public class InputManager : MonoBehaviour
         SpeechNode node = (SpeechNode) _node;
         m_textbox.SetSpeakerName(node.SpeakerName);
         m_textbox.SetText(node.Text);
-    }
-
-    void __ProcessEventNode(IDNodeBase _node)
-    {
-        EventNode node = (EventNode) _node;
-        Debug.Log(node.EventType);
     }
 
     void __ProcessStartNode(IDNodeBase _node)

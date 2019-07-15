@@ -1,7 +1,22 @@
 Color Scheme:
-#5e897c
-#5cae8a
-#dad668
-#b3b056
-#f4b46b
-#f14f41
+    Speech Nodes (Green):
+        #5e897c
+        #5cae8a
+        #52414c (purple)
+
+    Action Nodes (Orange):
+        #f6c185
+        #f5ba78
+        #f4b46b
+
+    Start/End Nodes (Red):
+        Choice Branch:
+            #d1603d
+            #c9765c
+
+        Main Branch:
+            #f36f63
+            #f14f41
+
+    Comment Node (Gray):
+        #596157
