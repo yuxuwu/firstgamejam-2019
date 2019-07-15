@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using XNode;
 
-[CreateNodeMenu("Misc. Nodes/Start Node")]
+[CreateNodeMenu("Start End Nodes/Start Node")]
 [NodeTint("#f14f41")]
 public class StartNode : IDNodeBase
 { 
