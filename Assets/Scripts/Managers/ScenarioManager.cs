@@ -51,7 +51,7 @@ public class ScenarioManager : MonoBehaviour
         // Retrive top 3 choices
         for(int i = 0; i < 3; i++)
         {
-            if (_choices[i] != null)
+            if (i < _choices.Count)
             {
                 choices.Add(_choices[i]);
             }
@@ -62,6 +62,10 @@ public class ScenarioManager : MonoBehaviour
     public void RemoveChoice(int index)
     {
         _choices.RemoveAt(index);
+        if (_choices.Count == 0)
+        {
+            _switches["IsChoicesEmpty"] = true;
+        }
     }
 
     public void Jump(int targetID)
@@ -77,7 +81,6 @@ public class ScenarioManager : MonoBehaviour
 
     public void AdvanceByNode(IDNodeBase node)
     {
-        Debug.Log(node.id);
         _currentNode = node;
     }
 

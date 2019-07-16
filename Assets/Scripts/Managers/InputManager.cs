@@ -10,7 +10,9 @@ public class InputManager : MonoBehaviour
 
         DisplayingMainChoices,
 
-        DisplayingSimpleChoices
+        DisplayingSimpleChoices,
+        
+        End
     }
 
     [SerializeField] private State state;
@@ -74,6 +76,7 @@ public class InputManager : MonoBehaviour
         {
             // Change current node to target node
             m_scenario.Jump(targetID);
+            m_scenario.RemoveChoice(index);
             DisableChoices();
             state = State.Processing;
         }
@@ -175,31 +178,26 @@ public class InputManager : MonoBehaviour
     private void __ProcessEndChoiceNode(IDNodeBase _node)
     {
         EndChoiceNode node = (EndChoiceNode) _node;
-        Debug.Log("End choice node");
         // Return to original node + 1
         m_scenario.Return();
-        Debug.Log(m_scenario.GetCurrentNode().id);
-        Debug.Log("Printed returned node id");
         m_scenario.AdvanceCurrentNode();
-        Debug.Log("Printing advanced node");
-        Debug.Log(m_scenario.GetCurrentNode().id);
     }
 
     private void __ProcessDisplayChoicesNode(IDNodeBase _node)
     {
         DisplayChoices node = (DisplayChoices) _node;
         List<ScenarioManager.Choice> choices = m_scenario.GetChoices();
-        if (choices[0] != null)
+        if (choices.Count > 0)
         {
             state = State.DisplayingMainChoices;
 
             m_choice0.SetChoice(choices[0].choiceText, choices[0].targetID);
             m_choice0.Enable();
-            if (choices[1] != null) 
+            if (choices.Count > 1) 
             {
                 m_choice1.SetChoice(choices[1].choiceText, choices[1].targetID);
                 m_choice1.Enable();
-                if (choices[2] != null) 
+                if (choices.Count > 2)
                 {
                     m_choice2.SetChoice(choices[2].choiceText, choices[2].targetID);
                     m_choice2.Enable();
@@ -224,6 +222,7 @@ public class InputManager : MonoBehaviour
     private void __ProcessEndNode(IDNodeBase _node)
     {
         EndNode node = (EndNode) _node;
+        state = State.End;
         Debug.Log("We've hit the end!");
     }
 
