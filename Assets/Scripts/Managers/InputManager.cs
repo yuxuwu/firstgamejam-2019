@@ -62,9 +62,10 @@ public class InputManager : MonoBehaviour
                 break;
             
             case State.DisplayingMainChoices:
-                // Do nothing, wait for OnChoiceSelected
+            case State.DisplayingSimpleChoices:
+            case State.End:
+                // Don't process these
                 break;
- 
         }
 
     }
@@ -72,13 +73,22 @@ public class InputManager : MonoBehaviour
     // START: Public Methods
     public void OnChoiceSelected(int targetID, int index)
     {
-        if (state == State.DisplayingMainChoices)
+        switch (state)
         {
-            // Change current node to target node
-            m_scenario.Jump(targetID);
-            m_scenario.RemoveChoice(index);
-            DisableChoices();
-            state = State.Processing;
+            case State.DisplayingMainChoices:
+                // Change current node to target node
+                m_scenario.Jump(targetID);
+                m_scenario.RemoveChoice(index);
+                DisableChoices();
+                state = State.Processing;
+                break;
+
+            case State.DisplayingSimpleChoices:
+                SimpleChoiceNode temp = m_scenario.GetCurrentNode() as SimpleChoiceNode;
+                m_scenario.AdvanceByNode(temp.GetNextNode(index));
+                DisableChoices();
+                state = State.Processing;
+                break; 
         }
     }
     // END: Public Methods
@@ -137,9 +147,18 @@ public class InputManager : MonoBehaviour
         {
             __ProcessEndNode(node);
         }
+        else if (node is Simple3ChoiceNode)
+        {
+            __ProcessSimple3ChoiceNode(node);
+        }
+        else if (node is SimpleChoiceNode)
+        {
+            __ProcessSimpleChoiceNode(node);
+        }
         else
         {
             Debug.Log("Node" + node.id.ToString() + " not yet implemented!!");
+            state = State.End;
         }
     }
 
@@ -224,6 +243,33 @@ public class InputManager : MonoBehaviour
         EndNode node = (EndNode) _node;
         state = State.End;
         Debug.Log("We've hit the end!");
+    }
+
+    private void __ProcessSimple3ChoiceNode(IDNodeBase _node)
+    {
+        Simple3ChoiceNode node = (Simple3ChoiceNode) _node;
+        state = State.DisplayingSimpleChoices;
+
+        m_choice0.SetChoice(node.Choice0Text, -1);
+        m_choice0.Enable();
+
+        m_choice1.SetChoice(node.Choice1Text, -1);
+        m_choice1.Enable();
+
+        m_choice2.SetChoice(node.Choice2Text, -1);
+        m_choice2.Enable();
+    }
+
+    private void __ProcessSimpleChoiceNode(IDNodeBase _node)
+    {
+        SimpleChoiceNode node = (SimpleChoiceNode) _node;
+        state = State.DisplayingSimpleChoices;
+
+        m_choice0.SetChoice(node.Choice0Text, -1);
+        m_choice0.Enable();
+
+        m_choice1.SetChoice(node.Choice1Text, -1);
+        m_choice1.Enable();
     }
 
 }

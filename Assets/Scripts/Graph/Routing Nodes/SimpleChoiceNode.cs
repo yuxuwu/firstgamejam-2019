@@ -6,8 +6,7 @@ using XNode;
 public class SimpleChoiceNode : IDNodeBase
 {
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
-	public string SpeakerName;
-	[TextArea] public string Text;
+
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next0;
 	[TextArea] public string Choice0Text;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next1;
@@ -16,7 +15,7 @@ public class SimpleChoiceNode : IDNodeBase
 	public IDNodeBase GetNextNode(int index)
 	{
 		NodePort port = null;
-		port = GetOutputPort("ChoiceText" + index);
+		port = GetOutputPort("Next"+index);
 		return port.Connection.node as IDNodeBase;
 	}
 
