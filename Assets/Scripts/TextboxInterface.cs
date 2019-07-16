@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -8,12 +9,18 @@ public class TextboxInterface : MonoBehaviour
     Text text;
 
     public enum State {Waiting, Typing, Done}
-    public State state = State.Waiting;
+    public State state {get; private set;}
 
     void Start()
     {
         speaker = transform.Find("Speaker Name").GetComponent<Text>();
         text = transform.Find("Text").GetComponent<Text>();
+        state = State.Waiting;
+    }
+    
+    public void SignalWaiting()
+    {
+        state = State.Waiting;
     }
 
     public void SetSpeakerName(string str)
@@ -34,7 +41,7 @@ public class TextboxInterface : MonoBehaviour
         state = State.Typing;
         StartCoroutine(TypeText(str));
     }
-
+    
     private IEnumerator TypeText(string str)
     {
         text.text = "";

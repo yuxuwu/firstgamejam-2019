@@ -1,15 +1,17 @@
 ﻿using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class MouseCursor : MonoBehaviour
 {
-    SpriteRenderer m_spriteRenderer;
+    //SpriteRenderer m_spriteRenderer;
+    Image m_image;
     [SerializeField] Sprite defaultSprite = null;
-    [SerializeField] Sprite spoonSprite;
-    [SerializeField] Sprite spoonFruitSprite;
-    [SerializeField] Sprite spoonPuerSprite;
-    [SerializeField] Sprite spoonTiguaninSprite;
-    [SerializeField] Sprite spoonUlunSprite;
+    [SerializeField] Sprite spoonSprite = null;
+    [SerializeField] Sprite spoonFruitSprite = null;
+    [SerializeField] Sprite spoonPuerSprite = null;
+    [SerializeField] Sprite spoonTiguaninSprite = null;
+    [SerializeField] Sprite spoonUlunSprite = null;
 
     [SerializeField] StatsTracker stats;
 
@@ -22,15 +24,14 @@ public class MouseCursor : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        m_spriteRenderer = GetComponent<SpriteRenderer>();
-        m_spriteRenderer.sprite = defaultSprite;
+        m_image = GetComponent<Image>();
+        m_image.sprite = defaultSprite;
     }
 
     void Update()
     {
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = cursorPos;
-        Collider2D collider = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero).collider;;
+        transform.position = Input.mousePosition;
+        Collider2D collider = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero).collider;
 
         /// Process Hover state
         if (state == State.Hover)
@@ -43,12 +44,12 @@ public class MouseCursor : MonoBehaviour
                     case "TeaFruit":
                     case "TeaTiguanin":
                     case "TeaUlun":
-                        m_spriteRenderer.sprite = spoonSprite;
+                        m_image.sprite = spoonSprite;
                         break;
                 }
             }
             else {
-                m_spriteRenderer.sprite = defaultSprite;
+                m_image.sprite = defaultSprite;
             }
         }
 
@@ -58,19 +59,19 @@ public class MouseCursor : MonoBehaviour
             switch (collider.gameObject.name)
             {
                 case "TeaPuer":
-                    m_spriteRenderer.sprite = spoonPuerSprite;
+                    m_image.sprite = spoonPuerSprite;
                     tea = Tea.Puer;
                     break;
                 case "TeaFruit":
-                    m_spriteRenderer.sprite = spoonFruitSprite;
+                    m_image.sprite = spoonFruitSprite;
                     tea = Tea.Fruit;
                     break;
                 case "TeaTiguanin":
-                    m_spriteRenderer.sprite = spoonTiguaninSprite;
+                    m_image.sprite = spoonTiguaninSprite;
                     tea = Tea.Tiguanin;
                     break;
                 case "TeaUlun":
-                    m_spriteRenderer.sprite = spoonUlunSprite;
+                    m_image.sprite = spoonUlunSprite;
                     tea = Tea.Ulun;
                     break;
 
@@ -103,7 +104,7 @@ public class MouseCursor : MonoBehaviour
                         break;
                 }
             }
-            m_spriteRenderer.sprite = defaultSprite;
+            m_image.sprite = defaultSprite;
             state = State.Hover;
         }
     }

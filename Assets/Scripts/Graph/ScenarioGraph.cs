@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
@@ -63,5 +64,41 @@ public class ScenarioGraph : NodeGraph {
         }
         Debug.Log("No Start Node found!!!");
         return null;
+    }
+
+    public IDNodeBase GetNodeByID(int id)
+    {
+        IDNodeBase temp;
+        foreach (Node node in nodes)
+        {
+            if (node is IDNodeBase){
+                temp = node as IDNodeBase;
+                if (temp.id == id)
+                {
+                    return temp;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public IDictionary<string, bool> GetSwitches()
+    {
+        IDictionary<string, bool> switches = new Dictionary<string, bool>();
+        SwitchNode temp;
+        foreach (Node node in nodes)
+        {
+            if (node is SwitchNode)
+            {
+                temp = node as SwitchNode;
+                // Check if string is in dict
+                if (!switches.ContainsKey(temp.SwitchName))
+                {
+                    switches.Add(new KeyValuePair<string, bool>(temp.SwitchName, false));
+                }
+            }
+        }
+        return switches;
     }
 }
