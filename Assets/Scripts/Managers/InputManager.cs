@@ -24,10 +24,12 @@ public class InputManager : MonoBehaviour
 
     private ScenarioManager m_scenario;
     private bool m_OkayToProceedText = true;
+    private StatsTracker m_stats;
 
     private void Start()
     {
        m_scenario  = GetComponent<ScenarioManager>();
+       m_stats = GetComponent<StatsTracker>();
        state = State.Processing;
     }
 
@@ -155,6 +157,10 @@ public class InputManager : MonoBehaviour
         {
             __ProcessSimpleChoiceNode(node);
         }
+        else if (node is EmotionCheckNode)
+        {
+            __ProcessEmotionCheckNode(node);
+        }
         else
         {
             Debug.Log("Node" + node.id.ToString() + " not yet implemented!!");
@@ -270,6 +276,27 @@ public class InputManager : MonoBehaviour
 
         m_choice1.SetChoice(node.Choice1Text, -1);
         m_choice1.Enable();
+    }
+
+    private void __ProcessEmotionCheckNode(IDNodeBase _node)
+    {
+        EmotionCheckNode node = (EmotionCheckNode) _node;
+        if (m_stats.Jealousy >= node.Jealousy)
+        {
+            m_scenario.AdvanceByNode(node.GetNextNodeJealousy());
+        }
+        else if (m_stats.Pride >= node.Pride)
+        {
+            m_scenario.AdvanceByNode(node.GetNextNodePride());
+        }
+        else if (m_stats.Ambition >= node.Ambition)
+        {
+            m_scenario.AdvanceByNode(node.GetNextNodeAmbition());
+        }
+        else
+        {
+            m_scenario.AdvanceByNode(node.GetNextNode());
+        }
     }
 
 }
