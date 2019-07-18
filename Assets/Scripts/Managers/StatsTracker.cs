@@ -3,13 +3,25 @@ using UnityEngine;
 
 public class StatsTracker : MonoBehaviour
 {
-    [SerializeField] UIEmotionInterface emoInterface;
 
     public int Jealousy {get; private set;}
     public int Pride {get; private set;}
     public int Ambition {get; private set;}
 
-    [SerializeField] RectTransform emoTracker;
+    UIEmotionInterface emoInterface;
+    RectTransform emoTracker;
+
+    void Start()
+    {
+        /// Debug
+        Jealousy = 30;
+        Pride = 30;
+        Ambition = 30;
+
+        emoInterface = GameObject.Find("UIEmotionTracker").GetComponent<UIEmotionInterface>();
+        emoTracker = GameObject.Find("Emotion Tracker").GetComponent<RectTransform>();
+        RefreshTracker();
+    }
 
     private void RefreshTracker()
     {
@@ -18,15 +30,6 @@ public class StatsTracker : MonoBehaviour
         emoTracker.Find("Ambition").Find("Val").GetComponent<Text>().text = Ambition.ToString();
     }
 
-    void Start()
-    {
-        /// Debug
-        Jealousy = 30;
-        Pride = 30;
-        Ambition = 30;
-        emoInterface.RecalcDotPos();
-        RefreshTracker();
-    }
 
     public void AddJealousy(int val)
     {

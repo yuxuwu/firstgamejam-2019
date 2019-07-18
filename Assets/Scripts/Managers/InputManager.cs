@@ -17,14 +17,15 @@ public class InputManager : MonoBehaviour
 
     [SerializeField] private State state;
 
-    [SerializeField] TextboxInterface m_textbox;
-    [SerializeField] ChoiceInterface m_choice0;
-    [SerializeField] ChoiceInterface m_choice1;
-    [SerializeField] ChoiceInterface m_choice2;
+    [SerializeField] TextboxInterface m_textbox = null;
+    [SerializeField] ChoiceInterface m_choice0 = null;
+    [SerializeField] ChoiceInterface m_choice1 = null;
+    [SerializeField] ChoiceInterface m_choice2 = null;
+    [SerializeField] TeaButtonInterface m_teaChoice = null;
 
     private ScenarioManager m_scenario;
     private bool m_OkayToProceedText = true;
-    private StatsTracker m_stats;
+    private StatsTracker m_stats = null;
 
     private void Start()
     {
@@ -101,6 +102,7 @@ public class InputManager : MonoBehaviour
         m_choice0.Disable();
         m_choice1.Disable();
         m_choice2.Disable();
+        m_teaChoice.Disable();
     }
 
     private bool CheckInputSubmitUp()
@@ -228,6 +230,8 @@ public class InputManager : MonoBehaviour
                     m_choice2.Enable();
                 }
             }
+
+            m_teaChoice.Enable();
         }
     }
 
@@ -281,15 +285,15 @@ public class InputManager : MonoBehaviour
     private void __ProcessEmotionCheckNode(IDNodeBase _node)
     {
         EmotionCheckNode node = (EmotionCheckNode) _node;
-        if (m_stats.Jealousy >= node.Jealousy)
+        if (m_stats.Jealousy >= node.Jealousy && node.Jealousy > -1)
         {
             m_scenario.AdvanceByNode(node.GetNextNodeJealousy());
         }
-        else if (m_stats.Pride >= node.Pride)
+        else if (m_stats.Pride >= node.Pride && node.Pride > -1)
         {
             m_scenario.AdvanceByNode(node.GetNextNodePride());
         }
-        else if (m_stats.Ambition >= node.Ambition)
+        else if (m_stats.Ambition >= node.Ambition && node.Ambition > -1)
         {
             m_scenario.AdvanceByNode(node.GetNextNodeAmbition());
         }

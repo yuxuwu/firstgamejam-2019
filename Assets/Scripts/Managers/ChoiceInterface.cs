@@ -6,16 +6,13 @@ public class ChoiceInterface : MonoBehaviour
     int targetID;
     Text text;
 
-    Button button;
     InputManager im;
 
-    [SerializeField] int index;
+    [SerializeField] int index = 0;
 
     void Start()
     {
         text = transform.Find("Text").GetComponent<Text>();
-        button = transform.GetComponent<Button>();
-        //button.onClick.AddListener(OnClick);
         im = GameObject.Find("Managers").GetComponent<InputManager>();
 
         Disable();

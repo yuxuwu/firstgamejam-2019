@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: End Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1304, y: 632}
+  position: {x: 536, y: 504}
   ports:
     keys:
     - Prev
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1064, y: 872}
+  position: {x: 296, y: 744}
   ports:
     keys:
     - Prev
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: Add Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1304, y: 168}
+  position: {x: 536, y: 40}
   ports:
     keys:
     - Prev
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: Switch
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2104, y: 392}
+  position: {x: 1336, y: 264}
   ports:
     keys:
     - Prev
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2376, y: 184}
+  position: {x: 1608, y: 56}
   ports:
     keys:
     - Prev
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: Start Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 824, y: 632}
+  position: {x: 56, y: 504}
   ports:
     keys:
     - Next
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1679.5947, y: 1223.0646}
+  position: {x: 920, y: 1096}
   ports:
     keys:
     - Prev
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1720, y: 776}
+  position: {x: 952, y: 648}
   ports:
     keys:
     - Prev
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: Start Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 824, y: 408}
+  position: {x: 56, y: 280}
   ports:
     keys:
     - Next
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: Simple 3 Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1448, y: 792}
+  position: {x: 680, y: 664}
   ports:
     keys:
     - Next2
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1784, y: 280}
+  position: {x: 1016, y: 152}
   ports:
     keys:
     - Prev
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: Display Choices
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2040, y: 184}
+  position: {x: 1272, y: 56}
   ports:
     keys:
     - Prev
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 826.0475, y: 169.9069}
+  position: {x: 56, y: 40}
   ports:
     keys:
     - Next
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Name: End Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1307.2909, y: 407.207}
+  position: {x: 536, y: 280}
   ports:
     keys:
     - Prev
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: Start Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 818.7171, y: 868.2121}
+  position: {x: 56, y: 744}
   ports:
     keys:
     - Next
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Name: Add Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1544, y: 168}
+  position: {x: 776, y: 40}
   ports:
     keys:
     - Prev
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1064, y: 408}
+  position: {x: 296, y: 280}
   ports:
     keys:
     - Prev
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1720, y: 1000}
+  position: {x: 952, y: 872}
   ports:
     keys:
     - Prev
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Name: Add Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1064, y: 168}
+  position: {x: 296, y: 40}
   ports:
     keys:
     - Prev
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: End Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1976, y: 968}
+  position: {x: 1208, y: 840}
   ports:
     keys:
     - Prev
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1064, y: 632}
+  position: {x: 296, y: 504}
   ports:
     keys:
     - Prev

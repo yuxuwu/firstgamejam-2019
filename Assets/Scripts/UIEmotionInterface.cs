@@ -3,11 +3,24 @@ using UnityEngine;
 
 public class UIEmotionInterface : MonoBehaviour
 {
-    [SerializeField] Transform JealousyPos = null;
-    [SerializeField] Transform AmbitionPos = null;
-    [SerializeField] Transform PridePos = null;
-    [SerializeField] Transform DotPos = null;
-    [SerializeField] StatsTracker stats = null;
+    Transform JealousyPos = null;
+    Transform AmbitionPos = null;
+    Transform PridePos = null;
+    Transform DotPos = null;
+    StatsTracker stats = null;
+
+    void Start()
+    {
+        Transform emotion_ui = GameObject.Find("Character/Emotion UI").transform;
+        JealousyPos = emotion_ui.Find("Jealousy").transform;
+        print(JealousyPos);
+        PridePos = emotion_ui.Find("Pride").transform;
+        AmbitionPos = emotion_ui.Find("Ambition").transform;
+        DotPos = emotion_ui.Find("Dot").transform;
+        stats = GameObject.Find("Managers").GetComponent<StatsTracker>();
+
+        RecalcDotPos();
+    }
 
     [ExposeMethodInEditor]
     public void RecalcDotPos()

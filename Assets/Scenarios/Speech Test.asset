@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1709.9938, y: 153.09006}
+  position: {x: 1272, y: 56}
   ports:
     keys:
     - Prev
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1224, y: 152}
+  position: {x: 792, y: 56}
   ports:
     keys:
     - Prev
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1448, y: 152}
+  position: {x: 1016, y: 56}
   ports:
     keys:
     - Prev
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 469.8647, y: 196.5647}
+  position: {x: 24, y: 88}
   ports:
     keys:
     - Next
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: 152}
+  position: {x: 552, y: 56}
   ports:
     keys:
     - Prev
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: Speech
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 735.79846, y: 149.84683}
+  position: {x: 296, y: 40}
   ports:
     keys:
     - Prev
