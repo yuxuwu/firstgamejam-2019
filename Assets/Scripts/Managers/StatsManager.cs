@@ -1,7 +1,7 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 
-public class StatsTracker : MonoBehaviour
+public class StatsManager : MonoBehaviour
 {
 
     public int Jealousy {get; private set;}
@@ -18,8 +18,8 @@ public class StatsTracker : MonoBehaviour
         Pride = 30;
         Ambition = 30;
 
-        emoInterface = GameObject.Find("UIEmotionTracker").GetComponent<UIEmotionInterface>();
-        emoTracker = GameObject.Find("Emotion Tracker").GetComponent<RectTransform>();
+        emoInterface = GameObject.Find("Character/Emotion UI/UIEmotionTracker").GetComponent<UIEmotionInterface>();
+        emoTracker = GameObject.Find("Canvas/Emotion Tracker").GetComponent<RectTransform>();
         RefreshTracker();
     }
 

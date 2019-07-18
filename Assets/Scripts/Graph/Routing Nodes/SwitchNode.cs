@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using XNode;
 
+[NodeWidth(275)]
 [CreateNodeMenu("Routing Nodes/Switch Node")]
 [NodeTint("#ffd25a")]
 public class SwitchNode : IDNodeBase {

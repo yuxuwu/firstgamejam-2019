@@ -7,7 +7,7 @@ public class UIEmotionInterface : MonoBehaviour
     Transform AmbitionPos = null;
     Transform PridePos = null;
     Transform DotPos = null;
-    StatsTracker stats = null;
+    StatsManager stats = null;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class UIEmotionInterface : MonoBehaviour
         PridePos = emotion_ui.Find("Pride").transform;
         AmbitionPos = emotion_ui.Find("Ambition").transform;
         DotPos = emotion_ui.Find("Dot").transform;
-        stats = GameObject.Find("Managers").GetComponent<StatsTracker>();
+        stats = GameObject.Find("Managers").GetComponent<StatsManager>();
 
         RecalcDotPos();
     }

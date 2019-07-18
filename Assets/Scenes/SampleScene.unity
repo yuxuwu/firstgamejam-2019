@@ -335,6 +335,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eee77c85d49503744825bb1350306062, type: 3}
+--- !u!1 &483960892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 448081076110497510, guid: 0c0a388770606c743b8aa01ea2077d2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 738062511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &483960896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483960892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade4c99c65b3a674298511eef1fdb05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionAnim: {fileID: 833346898}
+  secondsBetweenTransition: 1.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +804,12 @@ PrefabInstance:
       propertyPath: m_teaChoice
       value: 
       objectReference: {fileID: 424374737343129923}
+    - target: {fileID: 5338871017438318414, guid: 0c0a388770606c743b8aa01ea2077d2a,
+        type: 3}
+      propertyPath: _scenario
+      value: 
+      objectReference: {fileID: 11400000, guid: ace4bd763c3943047a8ebd46937da890,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 8723874532400739371, guid: 0c0a388770606c743b8aa01ea2077d2a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c0a388770606c743b8aa01ea2077d2a, type: 3}
@@ -888,6 +914,7 @@ GameObject:
   - component: {fileID: 833346897}
   - component: {fileID: 833346896}
   - component: {fileID: 833346895}
+  - component: {fileID: 833346898}
   m_Layer: 5
   m_Name: Effects Panel
   m_TagString: Untagged
@@ -904,7 +931,7 @@ RectTransform:
   m_GameObject: {fileID: 833346893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.06, y: 1.06, z: 1.06}
   m_Children: []
   m_Father: {fileID: 1357486287}
   m_RootOrder: 6
@@ -939,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -963,6 +990,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833346893}
   m_CullTransparentMesh: 0
+--- !u!95 &833346898
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833346893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38fce5046526fd945b053866091fdef9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1357486283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,10 +1057,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 564}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1414,7 +1460,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 424374737343129923}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:

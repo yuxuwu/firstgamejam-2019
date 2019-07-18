@@ -2,9 +2,12 @@
 
 public class TeaButtonInterface : MonoBehaviour
 {
+
+    InputManager im;
     
     void Start()
     {
+        im = GameObject.Find("Managers").GetComponent<InputManager>();
         Disable();
     }
 
@@ -21,5 +24,6 @@ public class TeaButtonInterface : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("Loading Tea Minigame");
+        im.OnTeaMinigameSelected();
     }
 }

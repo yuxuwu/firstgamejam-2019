@@ -12,7 +12,7 @@ public class MouseCursor : MonoBehaviour
     [SerializeField] Sprite spoonTiguaninSprite = null;
     [SerializeField] Sprite spoonUlunSprite = null;
 
-    StatsTracker stats = null;
+    StatsManager stats = null;
 
     enum State {Hover, Dragging};
     enum Tea {Puer, Fruit, Tiguanin, Ulun};
@@ -22,7 +22,7 @@ public class MouseCursor : MonoBehaviour
 
     void Start()
     {
-        stats = GameObject.Find("Managers").GetComponent<StatsTracker>();
+        stats = GameObject.Find("Managers").GetComponent<StatsManager>();
         Cursor.visible = false;
         m_image = GetComponent<Image>();
         m_image.sprite = defaultSprite;

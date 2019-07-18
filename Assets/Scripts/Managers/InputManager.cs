@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour
         DisplayingMainChoices,
 
         DisplayingSimpleChoices,
+
+        PlayingTeaMinigame,
         
         End
     }
@@ -23,14 +25,17 @@ public class InputManager : MonoBehaviour
     [SerializeField] ChoiceInterface m_choice2 = null;
     [SerializeField] TeaButtonInterface m_teaChoice = null;
 
-    private ScenarioManager m_scenario;
+    private ScenarioManager m_scenario = null;
+    private StatsManager m_stats = null;
+    private ScenesManager m_scene = null;
+
     private bool m_OkayToProceedText = true;
-    private StatsTracker m_stats = null;
 
     private void Start()
     {
        m_scenario  = GetComponent<ScenarioManager>();
-       m_stats = GetComponent<StatsTracker>();
+       m_stats = GetComponent<StatsManager>();
+       m_scene = GetComponent<ScenesManager>();
        state = State.Processing;
     }
 
@@ -66,6 +71,7 @@ public class InputManager : MonoBehaviour
             
             case State.DisplayingMainChoices:
             case State.DisplayingSimpleChoices:
+            case State.PlayingTeaMinigame:
             case State.End:
                 // Don't process these
                 break;
@@ -74,6 +80,17 @@ public class InputManager : MonoBehaviour
     }
 
     // START: Public Methods
+    public void OnTeaMinigameSelected()
+    {
+        // Load scene
+        m_scene.LoadTeaMinigame();
+        // Disable textboxes
+        m_textbox.Disable();
+        DisableChoices();
+        // Set state
+        state = State.PlayingTeaMinigame;
+    }
+
     public void OnChoiceSelected(int targetID, int index)
     {
         switch (state)
