@@ -44,12 +44,12 @@ public class MouseCursor : MonoBehaviour
                     case "TeaFruit":
                     case "TeaTiguanin":
                     case "TeaUlun":
-                        m_image.sprite = spoonSprite;
+                        SetCursorSpoon(spoonSprite);
                         break;
                 }
             }
             else {
-                m_image.sprite = defaultSprite;
+                SetCursorDefault();
             }
         }
 
@@ -59,19 +59,19 @@ public class MouseCursor : MonoBehaviour
             switch (collider.gameObject.name)
             {
                 case "TeaPuer":
-                    m_image.sprite = spoonPuerSprite;
+                    SetCursorSpoon(spoonPuerSprite);
                     tea = Tea.Puer;
                     break;
                 case "TeaFruit":
-                    m_image.sprite = spoonFruitSprite;
+                    SetCursorSpoon(spoonFruitSprite);
                     tea = Tea.Fruit;
                     break;
                 case "TeaTiguanin":
-                    m_image.sprite = spoonTiguaninSprite;
+                    SetCursorSpoon(spoonTiguaninSprite);
                     tea = Tea.Tiguanin;
                     break;
                 case "TeaUlun":
-                    m_image.sprite = spoonUlunSprite;
+                    SetCursorSpoon(spoonUlunSprite);
                     tea = Tea.Ulun;
                     break;
 
@@ -104,9 +104,23 @@ public class MouseCursor : MonoBehaviour
                         break;
                 }
             }
-            m_image.sprite = defaultSprite;
+            SetCursorDefault();
             state = State.Hover;
         }
+    }
+
+    private void SetCursorDefault()
+    {
+        m_image.overrideSprite = defaultSprite;
+        transform.localScale = new Vector2(1, 1);
+        gameObject.GetComponent<RectTransform>().pivot = (defaultSprite.pivot)/defaultSprite.rect.width;
+    }
+
+    private void SetCursorSpoon(Sprite image)
+    {
+        m_image.overrideSprite = image;
+        transform.localScale = new Vector2(5, 5);
+        gameObject.GetComponent<RectTransform>().pivot = (image.pivot)/image.rect.width;
     }
 
 }

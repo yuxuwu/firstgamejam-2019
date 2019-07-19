@@ -30,7 +30,6 @@ public class StatsManager : MonoBehaviour
         emoTracker.Find("Ambition").Find("Val").GetComponent<Text>().text = Ambition.ToString();
     }
 
-
     public void AddJealousy(int val)
     {
         Jealousy += val;

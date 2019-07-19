@@ -17,12 +17,22 @@ public class ScenesManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("start");
         yield return new WaitForSeconds(secondsBetweenTransition);
+        GameObject.Find("Background").SetActive(false);
         SceneManager.LoadScene("TeaMinigame", LoadSceneMode.Additive);
         transitionAnim.SetTrigger("end");
     }
 
     public void UnloadTeaMinigame()
     {
+        StartCoroutine(_UnloadTeaScene());
+    }
 
+    private IEnumerator _UnloadTeaScene()
+    {
+        transitionAnim.SetTrigger("start");
+        yield return new WaitForSeconds(secondsBetweenTransition);
+        SceneManager.UnloadSceneAsync("TeaMinigame");
+        GameObject.Find("Background").SetActive(true);
+        transitionAnim.SetTrigger("end");
     }
 }
