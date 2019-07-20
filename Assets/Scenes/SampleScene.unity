@@ -532,12 +532,12 @@ PrefabInstance:
     - target: {fileID: 7028117321706289720, guid: 6cd26415969765749b5af177eb9eac35,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.32
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7028117321706289720, guid: 6cd26415969765749b5af177eb9eac35,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.32
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7028117321706289720, guid: 6cd26415969765749b5af177eb9eac35,
         type: 3}
@@ -569,11 +569,62 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.9242807
       objectReference: {fileID: 0}
+    - target: {fileID: 7028117321706289720, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028117321706289720, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028117321706289720, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7070372813973497802, guid: 6cd26415969765749b5af177eb9eac35,
         type: 3}
       propertyPath: m_Name
       value: Cursor
       objectReference: {fileID: 0}
+    - target: {fileID: 7070372813973497803, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 312cb5968b95e264f901d2cc1d58bad1,
+        type: 3}
+    - target: {fileID: 7070372813973497803, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: spoonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb3b2796f6dfe1f4880254fa0092d209,
+        type: 3}
+    - target: {fileID: 7070372813973497803, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: spoonFruitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87a34d270e8287d49b980b0769523144,
+        type: 3}
+    - target: {fileID: 7070372813973497803, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: spoonPuerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f87b3e50075b89947b2f123db0c3d661,
+        type: 3}
+    - target: {fileID: 7070372813973497803, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: spoonTiguaninSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e459336b6cf07fd42a691b0230cd8436,
+        type: 3}
+    - target: {fileID: 7070372813973497803, guid: 6cd26415969765749b5af177eb9eac35,
+        type: 3}
+      propertyPath: spoonUlunSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e8a81b47086da7e4faee2a811ec92836,
+        type: 3}
     - target: {fileID: 5404975662499161240, guid: 6cd26415969765749b5af177eb9eac35,
         type: 3}
       propertyPath: m_UseSpriteMesh
@@ -582,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 5404975662499161240, guid: 6cd26415969765749b5af177eb9eac35,
         type: 3}
       propertyPath: m_PreserveAspect
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd26415969765749b5af177eb9eac35, type: 3}

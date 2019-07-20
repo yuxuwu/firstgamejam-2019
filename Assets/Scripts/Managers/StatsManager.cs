@@ -1,4 +1,5 @@
-﻿using UnityEngine.UI;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class StatsManager : MonoBehaviour
@@ -14,13 +15,23 @@ public class StatsManager : MonoBehaviour
     void Start()
     {
         /// Debug
-        Jealousy = 30;
-        Pride = 30;
-        Ambition = 30;
+        Jealousy = 10;
+        Pride = 10;
+        Ambition = 10;
 
-        emoInterface = GameObject.Find("Character/Emotion UI/UIEmotionTracker").GetComponent<UIEmotionInterface>();
-        emoTracker = GameObject.Find("Canvas/Emotion Tracker").GetComponent<RectTransform>();
-        RefreshTracker();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Detected scene loaded: " + scene.name);
+        if (scene.name == "TeaMinigame")
+        {
+
+            emoInterface = GameObject.Find("Character/Emotion UI/UIEmotionTracker").GetComponent<UIEmotionInterface>();
+            emoTracker = GameObject.Find("Canvas/Emotion Tracker").GetComponent<RectTransform>();
+            RefreshTracker();
+        }
     }
 
     private void RefreshTracker()
@@ -32,42 +43,42 @@ public class StatsManager : MonoBehaviour
 
     public void AddJealousy(int val)
     {
-        Jealousy += val;
+        Jealousy = Mathf.Clamp(Jealousy + val, 0, 20);
         emoInterface.RecalcDotPos();
         RefreshTracker();
     }
 
     public void SubJealousy(int val)
     {
-        Jealousy -= val;
+        Jealousy = Mathf.Clamp(Jealousy - val, 0, 20);
         emoInterface.RecalcDotPos();
         RefreshTracker();
     }
 
     public void AddPride(int val)
     {
-        Pride += val;
+        Pride = Mathf.Clamp(Pride + val, 0, 20);
         emoInterface.RecalcDotPos();
         RefreshTracker();
     }
 
     public void SubPride(int val)
     {
-        Pride -= val;
+        Pride = Mathf.Clamp(Pride - val, 0, 20);
         emoInterface.RecalcDotPos();
         RefreshTracker();
     }
 
     public void AddAmbition(int val)
     {
-        Ambition += val;
+        Ambition = Mathf.Clamp(Ambition + val, 0, 20);
         emoInterface.RecalcDotPos();
         RefreshTracker();
     }
 
     public void SubAmbition(int val)
     {
-        Ambition -= val;
+        Ambition = Mathf.Clamp(Ambition - val, 0, 20);
         emoInterface.RecalcDotPos();
         RefreshTracker();
     }

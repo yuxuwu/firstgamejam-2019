@@ -86,19 +86,28 @@ public class MouseCursor : MonoBehaviour
         {
             if (collider && collider.gameObject.name == "TeaTeapot")
             {
+                Debug.Log("Dropped tea");
                 switch (tea)
                 {
                     case Tea.Puer:
-                        stats.AddJealousy(10);
+                        stats.AddJealousy(5);
+                        stats.SubAmbition(5);
+                        stats.SubPride(5);
                         break;
                     case Tea.Fruit:
-                        stats.AddJealousy(20);
+                        stats.AddJealousy(5);
+                        stats.SubAmbition(5);
+                        stats.SubPride(5);
                         break;
                     case Tea.Tiguanin:
-                        stats.AddAmbition(10);
+                        stats.AddAmbition(5);
+                        stats.SubJealousy(5);
+                        stats.SubPride(5);
                         break;
                     case Tea.Ulun:
-                        stats.AddPride(10);
+                        stats.AddPride(5);
+                        stats.SubJealousy(5);
+                        stats.SubAmbition(5);
                         break;
                     default:
                         break;
