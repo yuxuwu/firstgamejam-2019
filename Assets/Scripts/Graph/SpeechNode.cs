@@ -8,6 +8,8 @@ public class SpeechNode : IDNodeBase
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node Next;
 
 	public string SpeakerName;
+	public bool italics;
+	public bool bold;
 	[TextArea] public string Text;
 
 	public override object GetValue(NodePort port) { return null; }
