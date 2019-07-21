@@ -1,18 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioInterface : MonoBehaviour
 {
-    // Start is called before the first frame update
+    AudioSource m_audio;
+
     void Start()
     {
-        
+        m_audio = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SetTrack(AudioClip clip)
     {
-        
+        m_audio.clip = clip;
+        m_audio.Play();
     }
 }

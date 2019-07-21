@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
     private ScenarioManager m_scenario = null;
     private StatsManager m_stats = null;
     private ScenesManager m_scene = null;
+    private AudioInterface m_audio = null;
 
     private bool m_OkayToProceedText = true;
 
@@ -36,6 +37,7 @@ public class InputManager : MonoBehaviour
        m_scenario  = GetComponent<ScenarioManager>();
        m_stats = GetComponent<StatsManager>();
        m_scene = GetComponent<ScenesManager>();
+       m_audio = GameObject.Find("Audio Source").GetComponent<AudioInterface>();
        state = State.Processing;
     }
 
@@ -180,6 +182,10 @@ public class InputManager : MonoBehaviour
         {
             __ProcessEmotionCheckNode(node);
         }
+        else if (node is MusicChangeNode)
+        {
+            __ProcessMusicChangeNode(node);
+        }
         else
         {
             Debug.Log("Node" + node.id.ToString() + " not yet implemented!!");
@@ -302,15 +308,15 @@ public class InputManager : MonoBehaviour
     private void __ProcessEmotionCheckNode(IDNodeBase _node)
     {
         EmotionCheckNode node = (EmotionCheckNode) _node;
-        if (m_stats.Jealousy >= node.Jealousy && node.Jealousy > -1)
+        if (m_stats.Jealousy == 20)
         {
             m_scenario.AdvanceByNode(node.GetNextNodeJealousy());
         }
-        else if (m_stats.Pride >= node.Pride && node.Pride > -1)
+        else if (m_stats.Pride == 20)
         {
             m_scenario.AdvanceByNode(node.GetNextNodePride());
         }
-        else if (m_stats.Ambition >= node.Ambition && node.Ambition > -1)
+        else if (m_stats.Ambition == 20)
         {
             m_scenario.AdvanceByNode(node.GetNextNodeAmbition());
         }
@@ -319,5 +325,12 @@ public class InputManager : MonoBehaviour
             m_scenario.AdvanceByNode(node.GetNextNode());
         }
     }
-
+    
+    private void __ProcessMusicChangeNode(IDNodeBase _node)
+    {
+        MusicChangeNode node = (MusicChangeNode) _node;
+        // Change tracks
+        m_audio.SetTrack(node.Music);
+        m_scenario.AdvanceCurrentNode();
+    }
 }

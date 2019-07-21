@@ -7,16 +7,11 @@ public class EmotionCheckNode : IDNodeBase {
 
 	[Input(backingValue = ShowBackingValue.Never)] [SerializeField] Node Prev;
 
-	public int Jealousy = -1;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node JealousyRoute;
 
-	public int Pride = -1;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node PrideRoute;
 
-	public int Ambition = -1;
 	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node AmbitionRoute;
-
-	[Output(backingValue = ShowBackingValue.Never)] [SerializeField] Node FailRoute;
 
 	public IDNodeBase GetNextNodeJealousy()
 	{
@@ -36,13 +31,6 @@ public class EmotionCheckNode : IDNodeBase {
 	{
 		NodePort port = null;
 		port = GetOutputPort("AmbitionRoute");
-		return port.Connection.node as IDNodeBase;
-	}
-
-	public override IDNodeBase GetNextNode()
-	{
-		NodePort port = null;
-		port = GetOutputPort("FailRoute");
 		return port.Connection.node as IDNodeBase;
 	}
 
